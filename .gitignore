@@ -1,6 +1,7 @@
 bin/
 obj/
 Debug/
+.vs/
 # Miscellaneous
 *.class
 *.log
