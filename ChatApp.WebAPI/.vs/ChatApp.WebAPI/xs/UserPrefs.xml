@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{6F32D53F-472B-4E0A-81BA-6EC6C859F512}|Default">
+  <MonoDevelop.Ide.ItemProperties.ChatApp.WebAPI PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ChatApp.WebAPI/Controllers/UsersController.cs">
+    <Files>
+      <File FileName="ChatApp.WebAPI/Hubs/ChatHub.cs" Line="1" Column="1" />
+      <File FileName="ChatApp.WebAPI/ChatApp.WebAPI.csproj" />
+      <File FileName="ChatApp.WebAPI/Startup.cs" />
+      <File FileName="ChatApp.WebAPI/Controllers/UsersController.cs" Line="28" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ChatApp.WebAPI" expanded="True">
+            <Node name="ChatApp.WebAPI" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="UsersController.cs" selected="True" />
+              </Node>
+              <Node name="Hubs" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

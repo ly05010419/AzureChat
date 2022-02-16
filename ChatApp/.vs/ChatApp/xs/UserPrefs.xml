@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{59BCEC7B-072A-442D-A2F0-E172FD32985B}|Default">
+  <MonoDevelop.Ide.ItemProperties.ChatApp.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.0BE56153-F245-436E-B11B-EFD42745B80B" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ChatApp/Views/PrivateChatPage.xaml">
+    <Files>
+      <File FileName="ChatApp/Views/PrivateChatPage.xaml" Line="13" Column="40" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ChatApp" expanded="True">
+            <Node name="ChatApp" expanded="True">
+              <Node name="Services" expanded="True">
+                <Node name="Core" expanded="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="PrivateChatPage.xaml" expanded="True" selected="True" />
+              </Node>
+            </Node>
+            <Node name="ChatApp.iOS" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ChatApp.Android PreferredExecutionTarget="Android.pixel_3a_api_26" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/liyong/Downloads/AzureChat/ChatApp/ChatApp.iOS/Main.cs" relfile="ChatApp.iOS/Main.cs" line="18" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
