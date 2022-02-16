@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
-namespace ChatApp.Mobile.Converters
+namespace ChatApp.Converters
 {
     public class BooleanToColorConverter : IValueConverter
     {

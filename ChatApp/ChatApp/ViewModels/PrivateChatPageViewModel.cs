@@ -2,9 +2,7 @@
 using ChatApp.Mobile.Services.Interfaces;
 using Newtonsoft.Json;
 using Prism.Commands;
-using Prism.Mvvm;
 using Prism.Navigation;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
@@ -36,8 +34,8 @@ namespace ChatApp.Mobile.ViewModels
 
 
         private List<MessageModel> messageList;
-        private readonly IChatService chatService;
-        private readonly IUsersService usersService;
+        private readonly IChatService ChatService;
+        private readonly IUsersService UsersService;
      
 
         public List<MessageModel> MessagesList
@@ -54,8 +52,8 @@ namespace ChatApp.Mobile.ViewModels
             : base(navigationService, sessionService)
         {
             SendMsgCommand = new DelegateCommand(SendMsg);
-            this.chatService = chatService;
-            this.usersService = usersService;
+            ChatService = chatService;
+            UsersService = usersService;
         }
 
         public override async void Initialize(INavigationParameters parameters)
@@ -66,27 +64,28 @@ namespace ChatApp.Mobile.ViewModels
             Title = friend.Name;
             CurrentUser = await SessionService.GetConnectedUser();
             MessagesList = new List<MessageModel>();
-            var messages =await this.usersService.GetMyMessagesAsync(currentUser.ID, friend.ID);
+            var messages =await this.UsersService.GetMyMessagesAsync(currentUser.ID, friend.ID);
             foreach (var conversationReplyModel in messages)
             {
                 MessagesList.Add(new MessageModel
                 {
                     Message = conversationReplyModel.Content,
-                    IsOwnerMessage = conversationReplyModel.SenderUserId==currentUser.ID
+                    IsOwnerMessage = conversationReplyModel.SenderUserId==currentUser.ID,
+                    ProfileImage = "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png"
                 });
             }
             
             var tempList = MessagesList.ToList(); 
             MessagesList = new List<MessageModel>(tempList);
             
-            chatService.ReceiveMessage(GetMessage);
-            await chatService.Connect(CurrentUser.Email);
+            ChatService.ReceiveMessage(GetMessage);
+            await ChatService.Connect(CurrentUser.Email);
         }
 
         public override async void OnNavigatedFrom(INavigationParameters parameters)
         {
             base.OnNavigatedFrom(parameters);
-            await chatService.Disconnect();
+            await ChatService.Disconnect();
         }
 
         private void GetMessage(string userName, string message)
@@ -97,14 +96,14 @@ namespace ChatApp.Mobile.ViewModels
         private void AddMessage(string userName, string message, bool isOwner)
         {
             var tempList = MessagesList.ToList();
-            tempList.Add(new MessageModel { IsOwnerMessage = isOwner, Message = message, UseName = userName });
+            tempList.Add(new MessageModel { IsOwnerMessage = isOwner, Message = message, UseName = userName,ProfileImage = "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png" });
             MessagesList = new List<MessageModel>(tempList);
             Message = string.Empty;
         }
 
         private void SendMsg()
         {
-            chatService.SendMessage(friend.Email, Message);
+            ChatService.SendMessage(friend.Email, Message);
             AddMessage(friend.Name, Message, true);
         }
     }

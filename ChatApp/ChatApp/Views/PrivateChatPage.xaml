@@ -2,68 +2,79 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
+             xmlns:converters="clr-namespace:ChatApp.Converters;assembly=ChatApp"
+             xmlns:components="clr-namespace:ChatApp.components;assembly=ChatApp"
+             xmlns:models="clr-namespace:ChatApp.Mobile.Models;assembly=ChatApp"
+             xmlns:viewModels="clr-namespace:ChatApp.Mobile.ViewModels;assembly=ChatApp"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ChatApp.Mobile.Views.PrivateChatPage"
+             x:DataType="viewModels:PrivateChatPageViewModel"
              Title="{Binding Title}">
-    <ScrollView>
-    <Grid RowDefinitions="*, auto"
-          Margin="10">
-        <ListView ItemsSource="{Binding MessagesList}"
-                  SeparatorVisibility="None"
-                  HasUnevenRows="True">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid RowDefinitions="auto, auto">
-                            <Grid ColumnDefinitions="40, *" IsVisible="{Binding IsOwnerMessage}">
-                                <!--<Label Text="{Binding UserName}"/>-->
-                                <Frame CornerRadius="30"
-                                       Grid.Column="1"
-                                       HorizontalOptions="End"
-                                       HasShadow="True"
-                                       Margin="0"
-                                       BackgroundColor="AliceBlue"
-                                       Padding="5"
-                                       MinimumWidthRequest="20">
-                                    <Label Text="{Binding Message}"
-                                           Margin="10"
-                                           TextColor="Black"
-                                           LineBreakMode="WordWrap"/>
-                                </Frame>
-                            </Grid>
-                            <Grid ColumnDefinitions="*, 40"
-                                  Grid.Row="1"
-                                  IsVisible="{Binding IsOwnerMessage, Converter={StaticResource  BooleanToVisibility}, ConverterParameter=Inverse}">
-                                <!--<Label Text="{Binding UserName}"/>-->
-                                <Frame CornerRadius="30"
-                                       HasShadow="True"
-                                       Margin="0"
+    
+   <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InvertedBooleanConverter x:Key="InvertedBooleanConverter" />
+            <DataTemplate x:Key="MessageBubbleTemplate">
+                <ViewCell x:DataType="models:MessageModel" IsEnabled="False">
+                    <Grid RowDefinitions="auto, auto" >
+                        <Grid ColumnDefinitions="5,24,*,40" IsVisible="{Binding IsOwnerMessage}">
+                                <components:RoundedImage Grid.Column="1"
+                                                             ImageSource="{Binding ProfileImage}"
+                                                             HeightRequest="24" WidthRequest="24"/>
+                                <Frame Grid.Column="2" 
                                        HorizontalOptions="Start"
-                                       BackgroundColor="DarkRed"
-                                       Padding="5">
-                                    <Label Text="{Binding Message}"
-                                           Margin="10"
-                                           TextColor="Black"
-                                           LineBreakMode="WordWrap"/>
+                                       BackgroundColor="{StaticResource GreenLight}"
+                                       Padding="10, 5"
+                                       VerticalOptions="Center"
+                                       CornerRadius="20"
+                                       HasShadow="False">
+                                    <Label Text="{Binding  Message}" FontSize="16" Padding="5" LineBreakMode="WordWrap" />
                                 </Frame>
-                            </Grid>
-                            <!--<Grid RowDefinitions="auto, auto"  >
-                                <Label Text="{Binding UserName}"/>
-                                <Label Text="{Binding Message}"/>
-                            </Grid>-->
                         </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <StackLayout Grid.Row="1"
-                     Orientation="Horizontal">
-            <Entry Text="{Binding Message}"
-                   
-                   HorizontalOptions="FillAndExpand"></Entry>
-            <Button Text="Send" Command="{Binding SendMsgCommand}"/>
-        </StackLayout>
-
-    </Grid>
-        </ScrollView>
+                        <Grid Grid.Row="1" ColumnDefinitions="40,*,24,5" IsVisible="{Binding IsOwnerMessage, Converter={StaticResource InvertedBooleanConverter}}">
+                            <Frame Grid.Column="1"
+                                   HorizontalOptions="End"
+                                   BackgroundColor="{StaticResource GreyLight}"
+                                   Padding="10, 5"
+                                   VerticalOptions="Center"
+                                   CornerRadius="20"
+                                   HasShadow="False">
+                                <Label Text="{Binding  Message}" FontSize="16" Padding="5" LineBreakMode="WordWrap" />
+                            </Frame>
+                            <components:RoundedImage  Grid.Column="2"
+                                                          ImageSource="{Binding ProfileImage}"
+                                                          HeightRequest="24" WidthRequest="24" />
+                        </Grid>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <components:KeyboardGrid RowDefinitions="auto,*,auto" UseSafeArea="True" RowSpacing="0" Margin="0,10,0,0">
+            <ListView Grid.Row="1" 
+                      VerticalOptions="Fill"
+                      VerticalScrollBarVisibility="Never"
+                      SelectionMode="None"
+                      HasUnevenRows="True"
+                      SeparatorVisibility="None"
+                      ItemsSource="{Binding .MessagesList}"
+                      ItemTemplate="{StaticResource MessageBubbleTemplate}" />
+                <StackLayout Orientation="Vertical" Grid.Row="2" Spacing="0"> 
+                    <BoxView HeightRequest="1" BackgroundColor="{StaticResource GreyLight}" />
+                    <StackLayout Orientation="Horizontal" Margin="10">
+                        <components:StandardEntry Text="{Binding Message}" 
+                                                      Placeholder="Messages" 
+                                                      BorderThickness="2" 
+                                                      BorderColor="{StaticResource GreyLight}"
+                                                      HeightRequest="48"
+                                                      PaddingLeftAndRight="15"
+                                                      CornerRadius="24" 
+                                                      HorizontalOptions="FillAndExpand"/>
+                        <Button Text="Send" Command="{Binding SendMsgCommand}"/>
+                    </StackLayout>
+                </StackLayout>
+        </components:KeyboardGrid>
+    </ContentPage.Content>
+     
 </ContentPage>

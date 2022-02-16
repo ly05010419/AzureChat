@@ -6,6 +6,9 @@ namespace ChatApp.Mobile.Models
         public long ID { get; set; }
         public string UseName { get; set; }
         public string Message { get; set; }
+        
+        public string ProfileImage { get; set; }
+        
         public bool IsOwnerMessage { get; set; }
     }
 }

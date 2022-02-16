@@ -2,7 +2,6 @@
 <prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
-             xmlns:converters="clr-namespace:ChatApp.Mobile.Converters"
              x:Class="ChatApp.Mobile.App">
   <Application.Resources>
 
@@ -10,6 +9,36 @@
         <Color x:Key="PrimaryColor">#1B1F7B</Color>
         <Color x:Key="ElegantDarkColor">#D3D3D3</Color>
         <Color x:Key="WhiteColor">#FFFFFF</Color>
+      
+      <Color x:Key="GreyLightest">#F2F4F5</Color>
+      <Color x:Key="GreyLighter">#F7F9FA</Color>
+      <Color x:Key="GreyLight">#E3E5E5</Color>
+      <Color x:Key="GreyBase">#CDCFD0</Color>
+      <Color x:Key="GreyDark">#B4B6B8</Color>
+
+      <Color x:Key="GreenLightest">#E3FADA</Color>
+      <Color x:Key="GreenLighter">#7DDE86</Color>
+      <Color x:Key="GreenLight">#4CD471</Color>
+      <Color x:Key="GreenBase">#23C16B</Color>
+      <Color x:Key="GreenDark">#00A86B</Color>
+
+      <Color x:Key="RedLightest">#FFCACA</Color>
+      <Color x:Key="RedLighter">#FF9898</Color>
+      <Color x:Key="RedLight">#FF6D6D</Color>
+      <Color x:Key="RedBase">#FF5247</Color>
+      <Color x:Key="RedDark">#F73B2F</Color>
+
+      <Color x:Key="SkyLighter">#F2F4F5</Color>
+
+      <Color x:Key="FacebookLoginBackground">#0078FF</Color>
+      <Color x:Key="FacebookLoginText">White</Color>
+      <Color x:Key="TermsText">#6B4EFF</Color>
+
+      <Color x:Key="GoogleLoginBackground">#E3E5E5</Color>
+      <Color x:Key="GoogleLoginText">#0E0F0F</Color>
+
+      <Color x:Key="DetailsLabelText">#7A7E80</Color>
+      <Color x:Key="RedLabelText">#FF5247</Color>
     <!-- Application resource dictionary -->
 
         <!--Navigation bar-->
@@ -35,9 +64,5 @@
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             <Setter Property="CornerRadius" Value="15" />
         </Style>
-
-
-        <converters:BooleanToVisibility x:Key="BooleanToVisibility"/>
-        <converters:BooleanToColorConverter x:Key="BooleanToColorConverter"/>
-    </Application.Resources>
+  </Application.Resources>
 </prism:PrismApplication>
