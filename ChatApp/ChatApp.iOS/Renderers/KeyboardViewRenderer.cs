@@ -3,7 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using Foundation;
 using CoreGraphics;
-using ChatApp.components;
+using ChatApp.Components;
 using ChatApp.iOS.Renderers;
 
 [assembly: ExportRenderer(typeof(KeyboardGrid), typeof(KeyboardViewRenderer))]

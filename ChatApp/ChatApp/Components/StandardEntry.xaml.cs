@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace ChatApp.components
+namespace ChatApp.Components
 {
     public partial class StandardEntry : Entry
     {

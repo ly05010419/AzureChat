@@ -5,7 +5,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Shapes;
 using Xamarin.Forms.Xaml;
 
-namespace ChatApp.components
+namespace ChatApp.Components
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RoundedImage : Image

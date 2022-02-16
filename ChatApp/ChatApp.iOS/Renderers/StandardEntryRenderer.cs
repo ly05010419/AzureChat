@@ -1,4 +1,4 @@
-using ChatApp.components;
+using ChatApp.Components;
 using ChatApp.iOS.Renderers;
 using CoreGraphics;
 using UIKit;

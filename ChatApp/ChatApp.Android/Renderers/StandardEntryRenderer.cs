@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Android.Content;
 using Android.Graphics.Drawables;
-using ChatApp.components;
+using ChatApp.Components;
 using ChatApp.Droid.Renderers;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
