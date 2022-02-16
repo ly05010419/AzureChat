@@ -15,10 +15,15 @@ namespace ChatApp.WebAPI.Controllers
         
         public UsersController(IUsersManager usersManager, IConversationsManager conversationsManager)
         {
-            this.UsersManager = usersManager;
-            this.ConversationsManager = conversationsManager;
+            UsersManager = usersManager;
+            ConversationsManager = conversationsManager;
         }
-      
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult List()
+        {
+            return Ok(UsersManager.GetAllUsers());
+        }
         
         [AllowAnonymous]
         [HttpPost("login")]

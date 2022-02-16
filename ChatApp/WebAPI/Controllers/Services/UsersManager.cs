@@ -47,6 +47,11 @@ namespace ChatApp.Managers
         {
             return users.FindAll(x => x.ID != userID);
          }
+        public IEnumerable<UserModel> GetAllUsers()
+        {
+            return users;
+        }
+        
 
         public IEnumerable<ConversationReplyModel> GetMyMessages(long userID)
         {

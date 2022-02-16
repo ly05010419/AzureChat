@@ -31,6 +31,7 @@ namespace ChatApp.Mobile.ViewModels
         private async void SignIn()
         {
            var user = await authenticationService.Login(new LoginModel { Email = Email});
+           if (user == null) return;
            await SessionService.SetConnectedUser(user);
            await NavigationService.NavigateAsync("../FriendsPage");
         }
