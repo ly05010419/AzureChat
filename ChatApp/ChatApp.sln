@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp.iOS", "ChatApp.iOS\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp", "ChatApp\ChatApp.csproj", "{5CB813CC-FC21-41C7-8E09-2083F6204DFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{B0B5C9B7-7834-4166-A4A2-504AAD1BA79F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{5CB813CC-FC21-41C7-8E09-2083F6204DFE}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{5CB813CC-FC21-41C7-8E09-2083F6204DFE}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{5CB813CC-FC21-41C7-8E09-2083F6204DFE}.Release|iPhone.Build.0 = Release|Any CPU
+		{B0B5C9B7-7834-4166-A4A2-504AAD1BA79F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0B5C9B7-7834-4166-A4A2-504AAD1BA79F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0B5C9B7-7834-4166-A4A2-504AAD1BA79F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0B5C9B7-7834-4166-A4A2-504AAD1BA79F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0B5C9B7-7834-4166-A4A2-504AAD1BA79F}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{B0B5C9B7-7834-4166-A4A2-504AAD1BA79F}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{B0B5C9B7-7834-4166-A4A2-504AAD1BA79F}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{B0B5C9B7-7834-4166-A4A2-504AAD1BA79F}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{B0B5C9B7-7834-4166-A4A2-504AAD1BA79F}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{B0B5C9B7-7834-4166-A4A2-504AAD1BA79F}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{B0B5C9B7-7834-4166-A4A2-504AAD1BA79F}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{B0B5C9B7-7834-4166-A4A2-504AAD1BA79F}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
