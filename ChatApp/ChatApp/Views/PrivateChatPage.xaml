@@ -17,13 +17,13 @@
             <DataTemplate x:Key="MessageBubbleTemplate">
                 <ViewCell x:DataType="models:MessageModel" IsEnabled="False">
                     <Grid RowDefinitions="auto, auto" >
-                        <Grid ColumnDefinitions="5,24,*,40" IsVisible="{Binding IsOwnerMessage}">
+                        <Grid ColumnDefinitions="5,24,*,40" IsVisible="{Binding IsOwnerMessage, Converter={StaticResource InvertedBooleanConverter}}">
                                 <components:RoundedImage Grid.Column="1"
                                                              ImageSource="{Binding ProfileImage}"
                                                              HeightRequest="24" WidthRequest="24"/>
                                 <Frame Grid.Column="2" 
                                        HorizontalOptions="Start"
-                                       BackgroundColor="{StaticResource GreenLight}"
+                                       BackgroundColor="{StaticResource GreyLight}"
                                        Padding="10, 5"
                                        VerticalOptions="Center"
                                        CornerRadius="20"
@@ -31,10 +31,10 @@
                                     <Label Text="{Binding  Message}" FontSize="16" Padding="5" LineBreakMode="WordWrap" />
                                 </Frame>
                         </Grid>
-                        <Grid Grid.Row="1" ColumnDefinitions="40,*,24,5" IsVisible="{Binding IsOwnerMessage, Converter={StaticResource InvertedBooleanConverter}}">
+                        <Grid Grid.Row="1" ColumnDefinitions="40,*,24,5" IsVisible="{Binding IsOwnerMessage}">
                             <Frame Grid.Column="1"
                                    HorizontalOptions="End"
-                                   BackgroundColor="{StaticResource GreyLight}"
+                                   BackgroundColor="{StaticResource GreenLight}"
                                    Padding="10, 5"
                                    VerticalOptions="Center"
                                    CornerRadius="20"
