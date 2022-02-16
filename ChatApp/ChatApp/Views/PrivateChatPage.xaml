@@ -6,7 +6,9 @@
              xmlns:components="clr-namespace:ChatApp.Components;assembly=ChatApp"
              xmlns:models="clr-namespace:ChatApp.Mobile.Models;assembly=ChatApp"
              xmlns:viewModels="clr-namespace:ChatApp.Mobile.ViewModels;assembly=ChatApp"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              prism:ViewModelLocator.AutowireViewModel="True"
+             ios:Page.UseSafeArea="True"
              x:Class="ChatApp.Mobile.Views.PrivateChatPage"
              x:DataType="viewModels:PrivateChatPageViewModel"
              Title="{Binding Title}">
